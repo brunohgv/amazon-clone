@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
         })
         if(data['success']) {
           localStorage.setItem('token', data['token'])
+          await this.data.getProfile()
           this.router.navigate(['/'])
         } else {
           this.data.error(data['message'])
@@ -51,6 +52,7 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       this.data.error(error['message'])
     }
+    this.btnDisabled = false
   }
 
 }
