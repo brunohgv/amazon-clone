@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RestApiService } from './rest-api.service';
 import { DataService } from './data.service';
+import { AuthGuardService } from './auth-guard.service'
 
 import { MessageComponent } from './message/message.component'
 import { HomeComponent } from './home/home.component';
@@ -33,7 +34,8 @@ import { LoginComponent } from './login/login.component'
   ],
   providers: [
     RestApiService,
-    DataService
+    DataService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
